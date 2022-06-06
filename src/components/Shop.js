@@ -76,7 +76,7 @@ function Shop (){
     );
 
     return (
-        <motion.div key="modal" className="shop-container" 
+        <motion.div className="shop-container" 
         initial={{x:300, opacity:0}} 
         animate={{x:0, opacity:1}} 
         exit={{x: window.innerWidth, opacity:1, transition:{duration: 0.3}}}>
