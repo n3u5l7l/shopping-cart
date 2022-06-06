@@ -24,18 +24,7 @@
     align-items: center;
     gap:10px;
 }
-.shop-button{
-    border:none;
-    padding:1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    opacity:0.8;
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-}
-.shop-button:hover{
-    opacity:1;
-    transform: scale(1.1);
-}
+
 .svgRight{
     animation: back-forth 0.3s linear infinite;
 }
