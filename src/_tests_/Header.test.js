@@ -6,8 +6,10 @@ import Header from "../components/Header";
 afterEach(cleanup);
 
 it("has website title", () => {
+    const shoppingCart = {totalItem: 0};
+
     render(<MemoryRouter>
-        <Header/>
+        <Header shoppingCart={shoppingCart}/>
     </MemoryRouter>);
     
     const title = screen.getByText("NutShopy");
@@ -15,8 +17,10 @@ it("has website title", () => {
 })
 
 it("has navigation", () => {
+    const shoppingCart = {totalItem: 0};
+
     render(<MemoryRouter>
-        <Header/>
+        <Header shoppingCart={shoppingCart}/>
     </MemoryRouter>);
 
     const navigation = screen.getByRole("navigation");
@@ -24,9 +28,22 @@ it("has navigation", () => {
 });
 
 it("has four links in navigation", () => {
+    const shoppingCart = {totalItem: 0};
+
     render(<MemoryRouter>
-        <Header/>
+        <Header shoppingCart={shoppingCart}/>
     </MemoryRouter>);
 
     expect(screen.getAllByRole("link")).toHaveLength(4);
 });
+
+test("number displayed on cart when there's item's in cart", () => {
+    const shoppingCart = {totalItem: 1};
+
+    render(<MemoryRouter>
+        <Header shoppingCart={shoppingCart}/>
+    </MemoryRouter>);
+
+    expect(screen.getByText(/1/)).toBeInTheDocument();
+
+})
