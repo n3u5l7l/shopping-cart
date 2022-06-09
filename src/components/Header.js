@@ -18,9 +18,27 @@ const StyledLink = styled(Link)`
 &:hover::after{
         transform: scaleX(1);
     }
+& > .before{
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border: 1px solid;
+    border-radius: 50%;
+    top: 50%;
+    background-color: white;
+    font-size:15px;
+    color:black;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
 `
 
-function Header () {
+function Header ({shoppingCart, changeCartStatus}) {
+    function changes(e){
+        e.preventDefault();
+        changeCartStatus();
+    }
     const content = (
         <header className="nav-bar">
             <div className="title">NutShopy</div>
@@ -29,7 +47,10 @@ function Header () {
                     <StyledLink to="/">Home</StyledLink>
                     <StyledLink to ="/shop">Shop</StyledLink>
                     <StyledLink to="/contact">Contact</StyledLink>
-                    <StyledLink to="/cart"><CartLogo/></StyledLink>
+                    <StyledLink onClick={changes} to="/cart">
+                        {shoppingCart.totalItem > 0 && <div className="before">{shoppingCart.totalItem}</div>}
+                        <CartLogo/>
+                    </StyledLink>
                 </nav>
             </div>
         </header>
