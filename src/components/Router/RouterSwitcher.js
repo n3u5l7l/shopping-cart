@@ -23,6 +23,34 @@ import {
     function dontCloseCart(e) {
       e.stopPropagation();
     }
+
+    const updateCart = (nutType, nutCost, nutImg) => {
+      setShoppingCart((prevState) =>
+        Object.assign(
+          {},
+          prevState,
+          prevState[nutType] && prevState[nutType].amount >= 0
+            ? {
+                [nutType]: {
+                  ...prevState[nutType],
+                  amount: Number(prevState[nutType].amount) + 1,
+                  total:
+                    Number(prevState[nutType].amount) *
+                    Number(prevState[nutType].cost),
+                },
+                totalCost: prevState["totalCost"] + nutCost,
+                totalItem: prevState["totalItem"] + 1,
+              }
+            : {
+                [nutType]: { amount: 1, cost: nutCost, image: nutImg },
+                totalCost: prevState.totalCost
+                  ? prevState.totalCost + nutCost
+                  : nutCost,
+                totalItem: prevState.totalItem ? prevState.totalItem + 1 : 1,
+              }
+        )
+      );
+    };
   
     return (
       <BrowserRouter>
@@ -30,7 +58,7 @@ import {
           shoppingCart={shoppingCart}
           changeCartStatus={changeCartStatus}
         />
-        <AnimatePresence handleShoppingCart={setShoppingCart} />
+        <AnimatePresence updateCart={updateCart} />
         <Cart
           shoppingCart={shoppingCart}
           setShoppingCart={setShoppingCart}

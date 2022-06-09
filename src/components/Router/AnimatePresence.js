@@ -3,7 +3,7 @@ import App from "../../App";
 import Shop from "../Shop";
 import Contact from "../Contact";
 import { AnimatePresence } from "framer-motion";
-function AnimatePresences({ handleShoppingCart: setShoppingCart }) {
+function AnimatePresences({ updateCart }) {
   const location = useLocation();
   return (
     <AnimatePresence initial={false} exitBeforeEnter>
@@ -11,7 +11,7 @@ function AnimatePresences({ handleShoppingCart: setShoppingCart }) {
         <Route path="/" element={<App />} />
         <Route
           path="/shop"
-          element={<Shop handleShoppingCart={setShoppingCart} />}
+          element={<Shop updateCart={updateCart} />}
         />
         <Route path="/contact" element={<Contact />} />
       </Routes>
