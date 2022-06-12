@@ -5,13 +5,16 @@ import "../styles/Cart.css";
 import styled from "styled-components";
 import NonEmptyCart from "./CartHelper/NonEmptyCart";
 import EmptyCart from "./CartHelper/EmptyCart";
-
+import CartItemInfo from "./CartHelper/CartItemInfo";
 function Cart({
   shoppingCart: cartItems,
   showCart,
   dontCloseCart,
   changeCartStatus,
   setShoppingCart,
+  addNut,
+  minusNut,
+  changeNutAmount
 }) {
   let totalPrize = cartItems.totalCost;
   function addNuts(nutType, nutCost) {
@@ -64,30 +67,7 @@ function Cart({
           }
           return (
             <div className="cart-item" key={uniqid()}>
-              <img src={cartItems[nut].image} alt={nut}></img>
-              <div className="cart-item-info">
-                <div className="nut-name">{nut}</div>
-                <div className="nut-cost">{cartItems[nut].cost}</div>
-                <div className="nut-amount">
-                  <button
-                    className="decrement"
-                    onClick={(e) => {
-                      minusNuts(nut, cartItems[nut].cost);
-                    }}
-                  >
-                    -
-                  </button>
-                  <input type="text" value={cartItems[nut].amount} />
-                  <button
-                    className="increment"
-                    onClick={(e) => {
-                      addNuts(nut, cartItems[nut].cost);
-                    }}
-                  >
-                    +
-                  </button>
-                </div>
-              </div>
+             <CartItemInfo cartItems={cartItems} nut={nut} minusNuts={minusNut} addNuts={addNut} changeNutAmount={changeNutAmount} />
             </div>
           );
         })
@@ -115,6 +95,7 @@ function Cart({
           exit={{ x: -window.innerWidth, transition: { delay: 0.2 } }}
           className="cart-container"
           onClick={changeCartStatus}
+          data-testid="outside-cart"
         >
           {container}
         </motion.div>
