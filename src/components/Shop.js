@@ -10,7 +10,7 @@ import MacadamiaNutPic from "../assets/Macadamia-nut.jpeg";
 import PeanutPic from "../assets/peanut.jpeg";
 import BrazilNutPic from "../assets/Brazil-nut.jpeg";
 
-function Shop({ handleShoppingCart: setShoppingCart }) {
+function Shop({ updateCart }) {
   const NutInfos = [
     {
       image: CashewPic,
@@ -59,39 +59,11 @@ function Shop({ handleShoppingCart: setShoppingCart }) {
     },
   ];
 
-  const updateCart = (nutType, nutCost, nutImg) => {
-    setShoppingCart((prevState) =>
-      Object.assign(
-        {},
-        prevState,
-        prevState[nutType] && prevState[nutType].amount >= 0
-          ? {
-              [nutType]: {
-                ...prevState[nutType],
-                amount: Number(prevState[nutType].amount) + 1,
-                total:
-                  Number(prevState[nutType].amount) *
-                  Number(prevState[nutType].cost),
-              },
-              totalCost: prevState["totalCost"] + nutCost,
-              totalItem: prevState["totalItem"] + 1,
-            }
-          : {
-              [nutType]: { amount: 1, cost: nutCost, image: nutImg },
-              totalCost: prevState.totalCost
-                ? prevState.totalCost + nutCost
-                : nutCost,
-              totalItem: prevState.totalItem ? prevState.totalItem + 1 : 1,
-            }
-      )
-    );
-    console.log("LoL");
-  };
   let content = NutInfos.map((nut, index) => {
     return (
-      <div className="item-container" key={index}>
+      <section className="nut-container" key={index}>
         <img src={nut.image} alt={nut.type + " pic"} />
-        <div className="item-info">
+        <div className="nut-info">
           <div className="nut-type">{nut.type}</div>
           <div className="nut-cost">${nut.cost}</div>
           <button
@@ -100,7 +72,7 @@ function Shop({ handleShoppingCart: setShoppingCart }) {
             Add to cart
           </button>
         </div>
-      </div>
+      </section>
     );
   });
 
@@ -112,7 +84,7 @@ function Shop({ handleShoppingCart: setShoppingCart }) {
       exit={{ x: window.innerWidth, opacity: 1, transition: { duration: 0.3 } }}
     >
       <div className="shop-title">Nut Collection</div>
-      <div className="all-item-container">{content}</div>
+      <div className="all-nut-container">{content}</div>
     </motion.div>
   );
 }
