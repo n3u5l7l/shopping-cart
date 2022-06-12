@@ -39,7 +39,7 @@
     width:150px;
     height:auto;
 }
-.cart-item-info{
+.item-info{
     display:flex;
     flex:1;
     flex-direction: column;
