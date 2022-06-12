@@ -42,16 +42,69 @@ import {
                 totalItem: prevState["totalItem"] + 1,
               }
             : {
-                [nutType]: { amount: 1, cost: nutCost, image: nutImg },
-                totalCost: prevState.totalCost
-                  ? prevState.totalCost + nutCost
-                  : nutCost,
-                totalItem: prevState.totalItem ? prevState.totalItem + 1 : 1,
+                [nutType]: { amount: 1, cost: nutCost, image: nutImg, total: nutCost },
+                totalCost: prevState.totalCost + Number(nutCost),
+                totalItem: prevState.totalItem + 1
               }
         )
       );
     };
   
+    function addNut(nutType, nutCost) {
+      setShoppingCart((prevCart) => {
+        return {
+          ...prevCart,
+          [nutType]: {
+            ...prevCart[nutType],
+            amount: Number(prevCart[nutType].amount) + 1,
+            total:
+              (Number(prevCart[nutType].amount) + 1) *
+              Number(prevCart[nutType].cost),
+          },
+          totalCost: prevCart["totalCost"] + nutCost,
+          totalItem: prevCart["totalItem"] + 1,
+        };
+      });
+    }
+  
+    function minusNut(nutType, nutCost) {
+      setShoppingCart((prevCart) => {
+        return {
+          ...prevCart,
+          [nutType]: {
+            ...prevCart[nutType],
+            amount: Number(prevCart[nutType].amount) - 1,
+            total:
+              (Number(prevCart[nutType].amount) + 1) *
+              Number(prevCart[nutType].cost),
+          },
+          totalCost: prevCart["totalCost"] - nutCost,
+          totalItem: prevCart["totalItem"] - 1,
+        };
+      });
+    }
+
+    function changeNutAmount(event, nutType, nutCost){
+      if(event.target.value === "" || isNaN(Number(event.target.value))){
+        return;
+      }else{
+        console.log( Number(event.target.value));
+      setShoppingCart((prevCart) => {
+        return {
+          ...prevCart,
+          [nutType]: {
+            ...prevCart[nutType],
+            amount: Number(event.target.value),
+            total:
+              Number(event.target.value) *
+              Number(prevCart[nutType].cost),
+          },
+          totalCost: (prevCart["totalCost"] - prevCart[nutType].total) + Number(event.target.value) * Number(prevCart[nutType].cost),
+          totalItem: (prevCart["totalItem"] - prevCart[nutType].amount) + Number(event.target.value),
+        };
+      });
+    }
+    }
     return (
       <BrowserRouter>
         <Navigation
@@ -65,6 +118,9 @@ import {
           showCart={showCart}
           changeCartStatus={changeCartStatus}
           dontCloseCart={dontCloseCart}
+          addNut={addNut}
+          minusNut={minusNut}
+          changeNutAmount={changeNutAmount}
         />
       </BrowserRouter>
     );
