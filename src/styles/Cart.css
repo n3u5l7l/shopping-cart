@@ -5,6 +5,7 @@
     display:flex;
     justify-content: flex-end;
     background-color: rgba(144, 144, 144, 0.6);
+    z-index: 2;
 }
 
 .cart{

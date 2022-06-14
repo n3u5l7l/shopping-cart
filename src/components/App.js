@@ -1,6 +1,6 @@
 import "../styles/App.css";
-import { ReactComponent as LeftArrowLogo } from "./assets/chevron-left.svg";
-import { ReactComponent as RightArrowLogo } from "./assets/chevron-right.svg";
+import { ReactComponent as LeftArrowLogo } from "../assets/chevron-left.svg";
+import { ReactComponent as RightArrowLogo } from "../assets/chevron-right.svg";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { motion } from "framer-motion";
