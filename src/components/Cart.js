@@ -41,6 +41,7 @@ function Cart({
         dontCloseCart={dontCloseCart}
         content={content}
         totalPrize={totalPrize}
+        changeCartStatus={changeCartStatus}
       />
     ) : (
       <EmptyCart dontCloseCart={dontCloseCart} linkClick={changeCartStatus} />

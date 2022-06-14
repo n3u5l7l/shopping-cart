@@ -15,7 +15,10 @@ const StyledButton = styled("button")`
 `;
 
 
-function NonEmptyCart({ dontCloseCart, content, totalPrize }) {
+function NonEmptyCart({ dontCloseCart, content, totalPrize, changeCartStatus }) {
+
+  const checkingOut = (e) => {alert("Thanks for purchasing")};
+
   return (
     <motion.div
       initial={{ x: window.innerWidth, opacity: 0 }}
@@ -31,8 +34,8 @@ function NonEmptyCart({ dontCloseCart, content, totalPrize }) {
       <div className="cart-title">Shopping Cart</div>
       <div className="cart-items">{content}</div>
       <div className="cart-total-cost">Total Cost: {totalPrize}</div>
-      <StyledButton className="cart-checkout">Checkout</StyledButton>
-      <StyledButton className="cart-exit">Exit</StyledButton>
+      <StyledButton className="cart-checkout" onClick={checkingOut}>Checkout</StyledButton>
+      <StyledButton className="cart-exit" onClick={changeCartStatus}>Exit</StyledButton>
     </motion.div>
   );
 }
