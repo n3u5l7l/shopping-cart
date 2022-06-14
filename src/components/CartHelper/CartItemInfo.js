@@ -1,3 +1,12 @@
+import styled from "styled-components";
+
+const StyledButton = styled("button")`
+    border:1px solid gray;
+    background-color: white;
+    color:black;
+    font-weight:bolder;
+`;
+
 function CartItemInfo({ cartItems, nut, minusNuts, addNuts, changeNutAmount }) {
     const inputAmount = (e, nutType, nutCost) => {
       if (e.keyCode !== 13) {
@@ -13,28 +22,28 @@ function CartItemInfo({ cartItems, nut, minusNuts, addNuts, changeNutAmount }) {
           <div className="nut-name">{nut}</div>
           <div className="nut-cost">{cartItems[nut].cost}</div>
           <div className="nut-amount">
-            <button
+            <StyledButton
               className="decrement"
               onClick={(e) => {
                 minusNuts(nut, cartItems[nut].cost);
               }}
             >
               -
-            </button>
+            </StyledButton>
             <input
               type="text"
               onKeyDown={(e) => inputAmount(e, nut, cartItems[nut].cost)}
               onBlur={(e) => changeNutAmount(e, nut, cartItems[nut].cost)}
               defaultValue={cartItems[nut].amount}
             />
-            <button
+            <StyledButton
               className="increment"
               onClick={(e) => {
                 addNuts(nut, cartItems[nut].cost);
               }}
             >
               +
-            </button>
+            </StyledButton>
           </div>
         </div>
       </>

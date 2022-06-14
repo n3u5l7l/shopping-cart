@@ -1,4 +1,19 @@
 import { motion } from "framer-motion";
+import styled from "styled-components";
+
+const StyledButton = styled("button")`
+    border:1px solid gray;
+    background-color: white;
+    color:black;
+    font-weight:bolder;
+    opacity: 0.7;
+    transition: opacity 0.3s linear, transform 0.3s linear;
+    &:hover{
+      opacity:1;
+      transform: scale(1.1);
+    }
+`;
+
 
 function NonEmptyCart({ dontCloseCart, content, totalPrize }) {
   return (
@@ -16,8 +31,8 @@ function NonEmptyCart({ dontCloseCart, content, totalPrize }) {
       <div className="cart-title">Shopping Cart</div>
       <div className="cart-items">{content}</div>
       <div className="cart-total-cost">Total Cost: {totalPrize}</div>
-      <button className="cart-checkout">Checkout</button>
-      <button className="cart-exit">Exit</button>
+      <StyledButton className="cart-checkout">Checkout</StyledButton>
+      <StyledButton className="cart-exit">Exit</StyledButton>
     </motion.div>
   );
 }
