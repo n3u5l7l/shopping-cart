@@ -86,6 +86,9 @@ import {
 
     function changeNutAmount(event, nutType, nutCost){
       if(event.target.value === "" || isNaN(Number(event.target.value))){
+        event.target.setCustomValidity("Please input a number");
+        event.target.reportValidity();
+        setTimeout(()=>{event.target.setCustomValidity("");}, 3000)
         return;
       }else{
         console.log( Number(event.target.value));
