@@ -9,10 +9,7 @@ function AnimatePresences({ updateCart }) {
     <AnimatePresence initial={false} exitBeforeEnter>
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<App />} />
-        <Route
-          path="/shop"
-          element={<Shop updateCart={updateCart} />}
-        />
+        <Route path="/shop" element={<Shop updateCart={updateCart} />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
     </AnimatePresence>

@@ -1,5 +1,5 @@
 import "../styles/Shop.css";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import CashewPic from "../assets/cashew-nuts.jpeg";
 import AlmondPic from "../assets/Almond.jpeg";
 import WalnutPic from "../assets/Walnut.jpeg";

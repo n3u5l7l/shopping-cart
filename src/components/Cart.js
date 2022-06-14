@@ -1,11 +1,10 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
 import uniqid from "uniqid";
 import "../styles/Cart.css";
-import styled from "styled-components";
 import NonEmptyCart from "./CartHelper/NonEmptyCart";
 import EmptyCart from "./CartHelper/EmptyCart";
 import CartItemInfo from "./CartHelper/CartItemInfo";
+
 function Cart({
   shoppingCart: cartItems,
   showCart,
@@ -17,43 +16,6 @@ function Cart({
   changeNutAmount
 }) {
   let totalPrize = cartItems.totalCost;
-  function addNuts(nutType, nutCost) {
-    setShoppingCart((prevCart) => {
-      return {
-        ...prevCart,
-        [nutType]: {
-          ...prevCart[nutType],
-          amount: Number(prevCart[nutType].amount) + 1,
-          total:
-            (Number(prevCart[nutType].amount) + 1) *
-            Number(prevCart[nutType].cost),
-        },
-        totalCost: prevCart["totalCost"] + nutCost,
-        totalItem: prevCart["totalItem"] + 1,
-      };
-    });
-  }
-
-  function minusNuts(nutType, nutCost) {
-    setShoppingCart((prevCart) => {
-      return {
-        ...prevCart,
-        [nutType]: {
-          ...prevCart[nutType],
-          amount: Number(prevCart[nutType].amount) - 1,
-          total:
-            (Number(prevCart[nutType].amount) + 1) *
-            Number(prevCart[nutType].cost),
-        },
-        totalCost: prevCart["totalCost"] - nutCost,
-        totalItem: prevCart["totalItem"] - 1,
-      };
-    });
-  }
-
-  function linkClick(e) {
-    changeCartStatus();
-  }
 
   let content =
     Object.keys(cartItems).length > 2
@@ -81,7 +43,7 @@ function Cart({
         totalPrize={totalPrize}
       />
     ) : (
-      <EmptyCart dontCloseCart={dontCloseCart} linkClick={linkClick} />
+      <EmptyCart dontCloseCart={dontCloseCart} linkClick={changeCartStatus} />
     );
 
   return (
