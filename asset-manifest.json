@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/shopping-cart/static/css/main.dcecdc14.css",
+    "main.js": "/shopping-cart/static/js/main.3e23ae28.js",
+    "static/js/787.d6fe38e8.chunk.js": "/shopping-cart/static/js/787.d6fe38e8.chunk.js",
+    "static/media/pexels-marta-branco-1295572.jpeg": "/shopping-cart/static/media/pexels-marta-branco-1295572.7c4da366ab71fb0425d9.jpeg",
+    "static/media/Walnut.jpeg": "/shopping-cart/static/media/Walnut.bf4038e8a9bcde01cc67.jpeg",
+    "static/media/cashew-nuts.jpeg": "/shopping-cart/static/media/cashew-nuts.7d10db2fa4f5fee76467.jpeg",
+    "static/media/Almond.jpeg": "/shopping-cart/static/media/Almond.b6dc58a42f355d469452.jpeg",
+    "static/media/peanut.jpeg": "/shopping-cart/static/media/peanut.537b2ed7aa7264736134.jpeg",
+    "static/media/Hazelnut.jpeg": "/shopping-cart/static/media/Hazelnut.7e56ba6f6757403afa34.jpeg",
+    "static/media/Pistachios.jpeg": "/shopping-cart/static/media/Pistachios.35c5ac10512ecd200c87.jpeg",
+    "static/media/Brazil-nut.jpeg": "/shopping-cart/static/media/Brazil-nut.fdbe6f428634e22ac574.jpeg",
+    "static/media/Macadamia-nut.jpeg": "/shopping-cart/static/media/Macadamia-nut.a1eddac4e1baca8dca1e.jpeg",
+    "static/media/Pecans.jpeg": "/shopping-cart/static/media/Pecans.7b30dd1d2adde73a93bd.jpeg",
+    "static/media/cart-outline.svg": "/shopping-cart/static/media/cart-outline.d36b3f55022605e87af4eef19e6e6fbf.svg",
+    "index.html": "/shopping-cart/index.html",
+    "static/media/briefcase-outline.svg": "/shopping-cart/static/media/briefcase-outline.4fb714bc91710d0ee9fed258557c30c3.svg",
+    "static/media/chevron-left.svg": "/shopping-cart/static/media/chevron-left.77dd35f31b123920bf14ea6f8d29eac5.svg",
+    "static/media/chevron-right.svg": "/shopping-cart/static/media/chevron-right.014117a13a73fba5d38d7913e4596426.svg",
+    "main.dcecdc14.css.map": "/shopping-cart/static/css/main.dcecdc14.css.map",
+    "main.3e23ae28.js.map": "/shopping-cart/static/js/main.3e23ae28.js.map",
+    "787.d6fe38e8.chunk.js.map": "/shopping-cart/static/js/787.d6fe38e8.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dcecdc14.css",
+    "static/js/main.3e23ae28.js"
+  ]
+}
