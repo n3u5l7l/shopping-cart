@@ -1,0 +1,254 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders properly 1`] = `
+<div>
+  <div
+    class="shop-container"
+    style="opacity: 0; transform: translateX(300px) translateZ(0);"
+  >
+    <div
+      class="shop-title"
+    >
+      Nut Collection
+    </div>
+    <div
+      class="all-nut-container"
+    >
+      <section
+        class="nut-container"
+      >
+        <img
+          alt="Cashew nuts pic"
+          src="cashew-nuts.jpeg"
+        />
+        <div
+          class="nut-info"
+        >
+          <div
+            class="nut-type"
+          >
+            Cashew nuts
+          </div>
+          <div
+            class="nut-cost"
+          >
+            $
+            15.99
+          </div>
+          <button>
+            Add to cart
+          </button>
+        </div>
+      </section>
+      <section
+        class="nut-container"
+      >
+        <img
+          alt="Almonds pic"
+          src="Almond.jpeg"
+        />
+        <div
+          class="nut-info"
+        >
+          <div
+            class="nut-type"
+          >
+            Almonds
+          </div>
+          <div
+            class="nut-cost"
+          >
+            $
+            25.99
+          </div>
+          <button>
+            Add to cart
+          </button>
+        </div>
+      </section>
+      <section
+        class="nut-container"
+      >
+        <img
+          alt="Walnuts pic"
+          src="Walnut.jpeg"
+        />
+        <div
+          class="nut-info"
+        >
+          <div
+            class="nut-type"
+          >
+            Walnuts
+          </div>
+          <div
+            class="nut-cost"
+          >
+            $
+            14.99
+          </div>
+          <button>
+            Add to cart
+          </button>
+        </div>
+      </section>
+      <section
+        class="nut-container"
+      >
+        <img
+          alt="Pecans pic"
+          src="Pecans.jpeg"
+        />
+        <div
+          class="nut-info"
+        >
+          <div
+            class="nut-type"
+          >
+            Pecans
+          </div>
+          <div
+            class="nut-cost"
+          >
+            $
+            14.99
+          </div>
+          <button>
+            Add to cart
+          </button>
+        </div>
+      </section>
+      <section
+        class="nut-container"
+      >
+        <img
+          alt="Pistachios pic"
+          src="Pistachios.jpeg"
+        />
+        <div
+          class="nut-info"
+        >
+          <div
+            class="nut-type"
+          >
+            Pistachios
+          </div>
+          <div
+            class="nut-cost"
+          >
+            $
+            20.99
+          </div>
+          <button>
+            Add to cart
+          </button>
+        </div>
+      </section>
+      <section
+        class="nut-container"
+      >
+        <img
+          alt="Hazelnuts pic"
+          src="Hazelnut.jpeg"
+        />
+        <div
+          class="nut-info"
+        >
+          <div
+            class="nut-type"
+          >
+            Hazelnuts
+          </div>
+          <div
+            class="nut-cost"
+          >
+            $
+            18.99
+          </div>
+          <button>
+            Add to cart
+          </button>
+        </div>
+      </section>
+      <section
+        class="nut-container"
+      >
+        <img
+          alt="Brazil nuts pic"
+          src="Brazil-nut.jpeg"
+        />
+        <div
+          class="nut-info"
+        >
+          <div
+            class="nut-type"
+          >
+            Brazil nuts
+          </div>
+          <div
+            class="nut-cost"
+          >
+            $
+            15.99
+          </div>
+          <button>
+            Add to cart
+          </button>
+        </div>
+      </section>
+      <section
+        class="nut-container"
+      >
+        <img
+          alt="Macadamia nuts pic"
+          src="Macadamia-nut.jpeg"
+        />
+        <div
+          class="nut-info"
+        >
+          <div
+            class="nut-type"
+          >
+            Macadamia nuts
+          </div>
+          <div
+            class="nut-cost"
+          >
+            $
+            10.99
+          </div>
+          <button>
+            Add to cart
+          </button>
+        </div>
+      </section>
+      <section
+        class="nut-container"
+      >
+        <img
+          alt="Peanuts pic"
+          src="peanut.jpeg"
+        />
+        <div
+          class="nut-info"
+        >
+          <div
+            class="nut-type"
+          >
+            Peanuts
+          </div>
+          <div
+            class="nut-cost"
+          >
+            $
+            17.99
+          </div>
+          <button>
+            Add to cart
+          </button>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+`;
